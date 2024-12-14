@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purple Flowers</title>
+    <style>
+      /* CSS për lule të purpurta */
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        overflow: hidden;
+      }
+
+      .flowers {
+        position: relative;
+        transform: scale(0.9);
+      }
+
+      .flower {
+        position: absolute;
+        bottom: 10vmin;
+        transform-origin: bottom center;
+        z-index: 10;
+        --fl-speed: 0.8s;
+      }
+
+      .flower--1 {
+        animation: moving-flower-1 4s linear infinite;
+      }
+
+      .flower--1 .flower_line {
+        height: 70vmin;
+        background: #6c2c8c;
+        width: 0.5vmin;
+        margin: 0 auto;
+        animation-delay: 0.3s;
+      }
+
+      .flower_leafs {
+        position: absolute;
+        bottom: 70vmin;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .flower_leaf {
+        position: absolute;
+        width: 3vmin;
+        height: 12vmin;
+        background: #9b5cb2;
+        border-radius: 50%;
+        animation: blooming-leaf-right 4s infinite alternate;
+      }
+
+      .flower_leaf--1 {
+        transform: rotate(30deg);
+      }
+
+      .flower_leaf--2 {
+        transform: rotate(-30deg);
+      }
+
+      /* Animacione */
+      @keyframes moving-flower-1 {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-2vmin);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes blooming-leaf-right {
+        0% {
+          transform: scale(0.8);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flowers">
+      <div class="flower flower--1">
+        <div class="flower_leafs flower_leafs--1">
+          <div class="flower_leaf flower_leaf--1"></div>
+          <div class="flower_leaf flower_leaf--2"></div>
+        </div>
+        <div class="flower_line flower_line--1"></div>
+      </div>
+    </div>
+  </body>
+</html>
