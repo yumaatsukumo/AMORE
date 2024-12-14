@@ -1,99 +1,36 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Purple Flowers</title>
-    <style>
-      /* CSS për lule të purpurta */
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        overflow: hidden;
-      }
 
-      .flowers {
-        position: relative;
-        transform: scale(0.9);
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/index.css">
 
-      .flower {
-        position: absolute;
-        bottom: 10vmin;
-        transform-origin: bottom center;
-        z-index: 10;
-        --fl-speed: 0.8s;
-      }
+  <!-- Document Title -->
+  <title>I Have Something</title>
+</head>
 
-      .flower--1 {
-        animation: moving-flower-1 4s linear infinite;
-      }
+<body>
+  <!-- Background -->
+  <div class="night"></div>
 
-      .flower--1 .flower_line {
-        height: 70vmin;
-        background: #6c2c8c;
-        width: 0.5vmin;
-        margin: 0 auto;
-        animation-delay: 0.3s;
-      }
+  <!-- Title -->
+  <h1 class="title"></h1>
 
-      .flower_leafs {
-        position: absolute;
-        bottom: 70vmin;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+  <!-- Button -->
+  <div style="position: absolute; top: 60vh; width: 100%; display: flex; justify-content: center;">
+    <a href="flower.html" class="btn">
+      <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+        <path
+          d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+        </path>
+      </svg>
 
-      .flower_leaf {
-        position: absolute;
-        width: 3vmin;
-        height: 12vmin;
-        background: #9b5cb2;
-        border-radius: 50%;
-        animation: blooming-leaf-right 4s infinite alternate;
-      }
+      <span class="text">Open</span>
+    </a>
+  </div>
 
-      .flower_leaf--1 {
-        transform: rotate(30deg);
-      }
+  <script src="js/index.js"></script>
+</body>
 
-      .flower_leaf--2 {
-        transform: rotate(-30deg);
-      }
-
-      /* Animacione */
-      @keyframes moving-flower-1 {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-2vmin);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes blooming-leaf-right {
-        0% {
-          transform: scale(0.8);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="flowers">
-      <div class="flower flower--1">
-        <div class="flower_leafs flower_leafs--1">
-          <div class="flower_leaf flower_leaf--1"></div>
-          <div class="flower_leaf flower_leaf--2"></div>
-        </div>
-        <div class="flower_line flower_line--1"></div>
-      </div>
-    </div>
-  </body>
 </html>
